@@ -65,7 +65,7 @@ function initParticles() {
     let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
     let directionX = (Math.random() * 1) - 0.5;
     let directionY = (Math.random() * 1) - 0.5;
-    let color = 'rgba(255, 0, 127, 0.5)'; // neon pink
+    let color = 'rgba(249, 115, 22, 0.5)'; // vibrant orange
     particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
   }
 }
@@ -89,7 +89,7 @@ function connectParticles() {
       // Adjust connection distance and opacity
       if (distance < (canvas.width / 8) * (canvas.height / 8)) {
         opacityValue = 1 - (distance / 20000);
-        ctx.strokeStyle = `rgba(127, 0, 255, ${opacityValue * 0.2})`; // neon purple for lines
+        ctx.strokeStyle = `rgba(234, 179, 8, ${opacityValue * 0.2})`; // deep gold for lines
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
@@ -146,3 +146,5 @@ if (heroSubtitle) {
   
   setTimeout(typeEffect, 1000);
 }
+
+
