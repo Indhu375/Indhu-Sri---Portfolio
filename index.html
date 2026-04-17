@@ -4,30 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Indhu Sri | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="nav-container">
     <h2 class="logo">Indhu Sri</h2>
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="education.html">Education</a>
-      <a href="experience.html">Experience</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="certificates.html">Certificates</a>
-      <a href="contact.html">Contact</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
+<!-- ================= HERO SECTION ================= -->
+<section id="home" class="hero">
   <div class="hero-content">
     <h1>Indhu Sri</h1>
     <h3>Computer Science Engineer | Data Science | Machine Learning | Web Developer</h3>
@@ -53,8 +60,401 @@
   </div>
 </section>
 
+<!-- ================= ABOUT SECTION ================= -->
+<section id="about" class="hero">
+  <div class="hero-content" style="max-width:1100px; text-align:left;">
+    <h1>About Me</h1>
+
+    <p>
+      I am a Computer Science Engineering undergraduate with a strong interest in
+      data science, machine learning, web development. I enjoy
+      transforming raw data into meaningful insights and building user‑centric
+      applications that solve real‑world problems.
+    </p>
+
+    <p>
+      In my academic journey, I have worked on multiple end‑to‑end projects
+      involving data analysis, predictive modeling, and responsive web interfaces.
+      I am comfortable working with C++, Python, SQL, JavaScript, and modern development
+      tools, and I constantly seek opportunities to improve my technical depth.
+    </p>
+
+    <p>I love problem solving and have solved around 250+ DSA problems in platforms like 
+       leetcode, HackerRank, etc...</p>
+
+    <p>
+      I have also gained practical industry exposure through my Data Science
+      internship at SmartED Innovations, where I analyzed real‑world datasets,
+      performed exploratory data analysis, and collaborated with teams to deliver
+      actionable insights.
+    </p>
+
+    <p>
+      My long‑term goal is to grow as a skilled engineer who can design
+      scalable systems, apply data‑driven thinking, and contribute to impactful
+      technology products.
+    </p>
+  </div>
+</section>
+
+<!-- ================= EDUCATION SECTION ================= -->
+<section id="education" class="education-section">
+  <div class="education-header">
+    <h1>Education</h1>
+    <p>Academic Background & Learning Journey</p>
+  </div>
+  <div class="education-container">
+    <div class="education-card">
+      <h3>Bachelor of Engineering – Computer Science</h3>
+      <p class="institution">KPR Institute of Engineering and Technology</p>
+      <p class="duration">2023 – 2027</p>
+      <p class="description">
+        Pursuing a strong foundation in computer science concepts including
+        programming, data structures, databases, operating systems, and
+        software development with a growing focus on data science and web technologies.
+      </p>
+      <div class="edu-tags">
+        <span>CGPA : 8.52</span>
+        <span>Data Structures</span>
+        <span>DBMS</span>
+        <span>Operating Systems</span>
+        <span>Web Development</span>
+        <span>Machine Learning</span>
+      </div>
+    </div>
+    <div class="education-card">
+      <h3>Kongu Kalvi Nilayam (HSC)</h3>
+      <p class="institution">State Board – Tamil Nadu</p>
+      <p class="duration">2021 – 2023</p>
+      <div class="edu-tags">
+        <span>95.6 %</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE SECTION ================= -->
+<section id="experience" class="experience-section">
+  <div class="experience-header">
+    <h1>Experience</h1>
+    <p>Internships & Practical Industry Exposure</p>
+  </div>
+  <div class="experience-container">
+    <div class="experience-card">
+      <h3>Data Science Intern</h3>
+      <p class="company">SmartED Innovations</p>
+      <p class="duration">June 2025 - August 2025</p>
+      <ul class="experience-points">
+        <li>Worked on real-world datasets performing exploratory data analysis (EDA) and data preprocessing.</li>
+        <li>Built and evaluated machine learning models to extract meaningful insights.</li>
+        <li>Collaborated with team members to deliver data-driven solutions aligned with business goals.</li>
+        <li>Used Python libraries such as Pandas, NumPy, and Scikit-learn extensively.</li>
+      </ul>
+      <div class="exp-tags">
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>EDA</span>
+        <span>Data Analysis</span>
+      </div>
+    </div>
+    <div class="experience-card">
+      <h3>Web Development Trainee</h3>
+      <p class="company">Self / Academic Projects</p>
+      <p class="duration">2023 – Present</p>
+      <ul class="experience-points">
+        <li>Designed and developed responsive multi-page websites using HTML, CSS, and JavaScript.</li>
+        <li>Implemented clean UI layouts with glassmorphism and dark-themed aesthetics.</li>
+        <li>Worked with Git and GitHub for version control and collaborative development.</li>
+        <li>Deployed static websites using Netlify.</li>
+      </ul>
+      <div class="exp-tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>GitHub</span>
+        <span>Netlify</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS SECTION ================= -->
+<section id="skills" class="skills-section">
+  <div class="skills-header">
+    <h1>Technical Skills</h1>
+    <p>• Machine Learning • AI Integration</p>
+  </div>
+  <div class="skills-container">
+    <div class="skills-card">
+      <h3>Programming Languages</h3>
+      <div class="skills-badges">
+        <span>C++</span>
+        <span>Python</span>
+        <span>SQL</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h3>Core CS & Databases</h3>
+      <div class="skills-badges">
+        <span>Data Structures & Algorithms</span>
+        <span>Object-Oriented Programming</span>
+        <span>Operating Systems</span>
+        <span>MySQL</span>
+        <span>Firebase</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h3>Machine Learning & AI</h3>
+      <div class="skills-badges">
+        <span>Supervised Learning</span>
+        <span>Feature Engineering</span>
+        <span>NLP</span>
+        <span>Scikit-learn</span>
+        <span>Pandas</span>
+        <span>LLM Integration</span>
+        <span>RAG</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h3>Backend & APIs</h3>
+      <div class="skills-badges">
+        <span>FastAPI</span>
+        <span>REST APIs</span>
+        <span>Groq API</span>
+        <span>Email SMTP</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h3>Web & App Development</h3>
+      <div class="skills-badges">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Streamlit</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h3>Tools & Platforms</h3>
+      <div class="skills-badges">
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>VS Code</span>
+        <span>Jupyter Notebook</span>
+        <span>Google Colab</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h3>Professional Skills</h3>
+      <div class="skills-badges">
+        <span>Problem Solving</span>
+        <span>Adaptability</span>
+        <span>Collaboration</span>
+        <span>Communication</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS SECTION ================= -->
+<section id="projects" class="projects-section">
+  <div class="projects-header">
+    <h1>Projects</h1>
+    <p>Real-World Applications & Implementations</p>
+  </div>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>Routex - Intelligent PDF Document Routing System</h3>
+      <p>Automated system that extracts, summarizes, classifies PDF documents and routes them to appropriate departments with notifications.</p>
+      <div class="project-tech">
+        <span>Python</span><span>NLP</span><span>Groq API</span><span>OCR</span><span>Email SMTP</span><span>Llama</span><span>Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/arun-66102/PDF-Summarizer" target="_blank" class="primary">GitHub</a>
+        <a href="https://pdf-router.streamlit.app/" target="_blank" class="primary">View Proof</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>LexiLearn – Dyslexia Friendly Learning App</h3>
+      <p>An inclusive learning platform designed to enhance reading engagement using adaptive content and data-driven personalization for Dyslexia Children.</p>
+      <div class="project-tech">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Indhu375/LexiLearn" target="_blank" class="primary">GitHub</a>
+        <a href="https://lexilearn-iota.vercel.app/" target="_blank" class="primary">View Proof</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Prism AI</h3>
+      <p>Prism AI is an all-in-one AI content generation platform built for content creators, marketers, and indie hackers. Just enter your product name, and Prism AI instantly generates blog, video script, image.</p>
+      <div class="project-tech">
+        <span>Python</span><span>FastAPI</span><span>Llama</span><span>Groq API</span><span>Together AI</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Indhu375/Prism-AI" target="_blank" class="primary">GitHub</a>
+        <a href="https://prismai-livid.vercel.app/" target="_blank" class="primary">View Proof</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Carbon Footprint Calculator</h3>
+      <p>A web-based Carbon Footprint Calculator that helps users estimate their personal CO₂ emissions based on daily activities. Uses Firebase Authentication and Cloud Firestore.</p>
+      <div class="project-tech">
+        <span>HTML</span><span>CSS</span><span>Firebase</span><span>JavaScript</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Indhu375/Carbon-Footprint-Calculator" target="_blank" class="primary">GitHub</a>
+        <a href="https://carbon-footprint-calculator-kohl.vercel.app/" target="_blank" class="primary">View Proof</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Credit Card Fraud Detection</h3>
+      <p>Machine learning model to detect fraudulent transactions by handling class imbalance and optimizing precision-recall performance.</p>
+      <div class="project-tech">
+        <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Matplotlib</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Indhu375/Credit_Card_Fraud_Detection" target="_blank" class="primary">GitHub</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <h3>Fake Product Review Detection</h3>
+      <p>An end-to-end Natural Language Processing (NLP) project to detect fake vs genuine product reviews using Machine Learning techniques.</p>
+      <div class="project-tech">
+        <span>Python</span><span>NLP</span><span>Logistic Regression</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Indhu375/Fake_Product_Review_Detection" target="_blank" class="primary">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATES SECTION ================= -->
+<section id="certificates" class="cert-section">
+  <div class="cert-header">
+    <h1>Certifications</h1>
+    <p>Verified Credentials & Professional Learning</p>
+  </div>
+  <div class="cert-container">
+    <div class="cert-card">
+      <h3>Data Science</h3>
+      <p class="issuer">SmartED Innovations</p>
+      <p class="desc">Completed a hands-on data science internship involving data analysis, feature engineering, and predictive modeling on real-world datasets.</p>
+      <div class="cert-meta">
+        <span>Python</span><span>Machine Learning</span><span>EDA</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1vph0nUYZZApTY3fCcxUQDazHveb-4Qke/view?usp=drive_link" target="_blank" class="cert-link">View Certificate</a>
+    </div>
+    <div class="cert-card">
+      <h3>Technology Consulting Job Simulation</h3>
+      <p class="issuer">Accenture</p>
+      <p class="desc">Completed a technology consulting job simulation focused on analyzing business problems, evaluating technical solutions, and delivering structured recommendations.</p>
+      <div class="cert-meta">
+        <span>Problem Solving</span><span>Business Analysis</span><span>Technology Consulting</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1KW5ubLYPu_Fb24A-QKCdGPzRsxM_ESqW/view" target="_blank" class="cert-link">View Certificate</a>
+    </div>
+    <div class="cert-card">
+      <h3>Business Intelligence & Analytics</h3>
+      <p class="issuer">NPTEL</p>
+      <p class="desc">Gained practical knowledge of business intelligence concepts including data modeling, visualization, and transforming raw data into actionable business insights.</p>
+      <div class="cert-meta">
+        <span>Business Intelligence</span><span>SQL</span><span>Data Analysis</span><span>Decision Support</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1Ze2hYciU7bH7Aeg5xSEscNcLesWtAokl/view?usp=drive_link" target="_blank" class="cert-link">View Certificate</a>
+    </div>
+    <div class="cert-card">
+      <h3>Data Analysis & Decision Making - III</h3>
+      <p class="issuer">NPTEL</p>
+      <p class="desc">Advanced-level course focused on applying data analysis techniques to support informed decision-making in real-world scenarios.</p>
+      <div class="cert-meta">
+        <span>Python</span><span>Statistics</span><span>Analytical Thinking</span><span>Data Analysis</span>
+      </div>
+      <a href="https://drive.google.com/file/d/1aaF8h0EbJmkHqFLW4TC7Lve3ptirY0HK/view?usp=sharing" target="_blank" class="cert-link">View Certificate</a>
+    </div>
+    <div class="cert-card">
+      <h3>Indhu Sri_EF SET Certificate</h3>
+      <p class="issuer">EF SET</p>
+      <p class="desc">Certified English language proficiency through the EF SET assessment, evaluating reading and listening comprehension.</p>
+      <div class="cert-meta">
+        <span>English Proficiency</span><span>Communication Skills</span>
+      </div>
+      <a href="https://drive.google.com/file/d/19DLwAmd1oSnp732QfCiO7_2srfK8_YYC/view?usp=drive_link" target="_blank" class="cert-link">View Certificate</a>
+    </div>
+    <div class="cert-card">
+      <h3>Claude Code in Action</h3>
+      <p class="issuer">Anthropic</p>
+      <p class="desc">Learned how to build deterministic workflows, implement hooks to extend AI behavior, and integrate LLMs into real development pipelines.</p>
+      <div class="cert-meta">
+        <span>MCP Servers</span><span>Hooks</span><span>Claude Code SDK</span><span>Github Integration</span>
+      </div>
+      <a href="https://verify.skilljar.com/c/qa6xeajod8fc" target="_blank" class="cert-link">View Certificate</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="contact-section">
+  <div class="contact-header">
+    <h1>Get in Touch</h1>
+    <p>Let’s connect and build something impactful</p>
+  </div>
+  <div class="contact-container">
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>Email:</strong><br>
+        <a href="mailto:indhusrishanmugam@gmail.com">indhusrishanmugam@gmail.com</a>
+      </p>
+      <p><strong>Location:</strong><br>
+        Tamil Nadu, India
+      </p>
+      <p><strong>Profiles:</strong></p>
+      <div class="contact-socials">
+        <a href="https://github.com/Indhu375" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/indhu-sri-663309290/" target="_blank">LinkedIn</a>
+        <a href="https://leetcode.com/u/IndhuSriS/" target="_blank">LeetCode</a>
+        <a href="https://www.hackerrank.com/profile/23cs064_kpriet" target="_blank">HackerRank</a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Send a Message</h3>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn primary" style="width: 100%; margin-top: 10px;">Send Message</button>
+      </form>
+      <p id="form-status" style="margin-top: 15px;"></p>
+    </div>
+  </div>
+</section>
+
 <button id="scrollTop">↑</button>
 
 <script src="js/main.js"></script>
+
+<!-- ================= EMAILJS SCRIPT ================= -->
+<script>
+  (function(){
+    emailjs.init("dFyFfodVOmUv6jfM4");
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_67x2p2a",
+      "template_yjtpf6c",
+      this
+    ).then(function(){
+      document.getElementById("form-status").innerText = "Message sent successfully!";
+    }, function(error){
+      document.getElementById("form-status").innerText = "Failed to send message.";
+      console.error(error);
+    });
+  });
+</script>
+
 </body>
 </html>

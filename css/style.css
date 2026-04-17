@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --neon-pink: #ff007f;
+  --neon-purple: #7f00ff;
+  --neon-cyan: #00f2fe;
+  --bg-color: #050505;
+  --card-bg: rgba(20, 20, 25, 0.6);
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +16,46 @@
   font-family: 'Inter', sans-serif;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-pink) var(--bg-color);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--neon-pink), var(--neon-purple));
+  border-radius: 10px;
+}
+
+::selection {
+  background: var(--neon-pink);
+  color: white;
+}
+
 body {
-  background: #000;
+  background: var(--bg-color);
   color: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Base Canvas Styling */
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* NAVBAR */
@@ -32,7 +80,17 @@ body {
 .logo {
   font-size: 28px;
   font-weight: 800;
-  color: #e60073;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple), var(--neon-cyan));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
 }
 
 nav a {
@@ -40,12 +98,13 @@ nav a {
   font-size: 18px;
   color: #ccc;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
-  color: #e60073;
-  text-shadow: 0 0 15px #e60073;
+  color: #fff;
+  text-shadow: 0 0 10px var(--neon-pink);
 }
 
 /* HERO */
@@ -59,23 +118,55 @@ nav a.active {
 
 .hero-content {
   max-width: 900px;
-  background: rgba(30, 15, 20, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   padding: 70px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 0, 127, 0.15) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero-content h1 {
   font-size: 72px;
   margin-bottom: 15px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .hero-content h3 {
   font-size: 26px;
-  color: #e60073;
+  color: var(--neon-pink);
   margin-bottom: 25px;
+  min-height: 35px;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 24px;
+  background-color: var(--neon-pink);
+  margin-left: 5px;
+  animation: blink 0.8s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .hero-content p {
@@ -103,12 +194,21 @@ nav a.active {
 }
 
 .btn.primary {
-  background: #e60073;
-  box-shadow: 0 0 20px #e60073;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));
+  background-size: 200% auto;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+  border: none;
+  transition: all 0.4s ease;
+}
+
+.btn.primary:hover {
+  background-position: right center;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
 }
 
 .btn:hover {
   transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .socials a {
@@ -130,11 +230,18 @@ nav a.active {
   border: none;
   border-radius: 50%;
   font-size: 20px;
-  background: #e60073;
+  background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
   color: #fff;
   cursor: pointer;
   display: none;
-  box-shadow: 0 0 20px #e60073;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#scrollTop:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255, 0, 127, 0.8);
 }
 
 /* RESPONSIVE */
@@ -153,7 +260,7 @@ nav a.active {
 .skills-section {
   min-height: 100vh;
   padding: 80px 40px;
-  background: radial-gradient(circle at top, #1a0b0f, #000);
+  position: relative;
 }
 
 .skills-header {
@@ -237,7 +344,7 @@ nav a.active {
 .projects-section {
   min-height: 100vh;
   padding: 80px 40px;
-  background: radial-gradient(circle at top, #1a0b0f, #000);
+  position: relative;
 }
 
 .projects-header {
@@ -348,7 +455,7 @@ nav a.active {
 .cert-section {
   min-height: 100vh;
   padding: 80px 40px;
-  background: radial-gradient(circle at top, #1a0b0f, #000);
+  position: relative;
 }
 
 .cert-header {
@@ -450,7 +557,7 @@ nav a.active {
 .contact-section {
   min-height: 100vh;
   padding: 80px 40px;
-  background: radial-gradient(circle at top, #1a0b0f, #000);
+  position: relative;
 }
 
 .contact-header {
@@ -564,7 +671,7 @@ nav a.active {
 .education-section {
   min-height: 100vh;
   padding: 80px 40px;
-  background: radial-gradient(circle at top, #1a0b0f, #000);
+  position: relative;
 }
 
 .education-header {
@@ -656,7 +763,7 @@ nav a.active {
 .experience-section {
   min-height: 100vh;
   padding: 80px 40px;
-  background: radial-gradient(circle at top, #1a0b0f, #000);
+  position: relative;
 }
 
 .experience-header {
