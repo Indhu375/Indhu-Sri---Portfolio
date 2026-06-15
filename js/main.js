@@ -147,4 +147,115 @@ if (heroSubtitle) {
   setTimeout(typeEffect, 1000);
 }
 
+// --- 4. Custom Cursor ---
+const cursorDot = document.querySelector("[data-cursor-dot]");
+const cursorOutline = document.querySelector("[data-cursor-outline]");
 
+window.addEventListener("mousemove", function (e) {
+  const posX = e.clientX;
+  const posY = e.clientY;
+
+  if (cursorDot && cursorOutline) {
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+
+    cursorOutline.animate({
+      left: `${posX}px`,
+      top: `${posY}px`
+    }, { duration: 500, fill: "forwards" });
+  }
+});
+
+document.querySelectorAll("a, button").forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    if (cursorOutline) cursorOutline.classList.add("cursor-hover");
+  });
+  el.addEventListener("mouseleave", () => {
+    if (cursorOutline) cursorOutline.classList.remove("cursor-hover");
+  });
+});
+
+// --- 5. Scroll Reveal ---
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.1 });
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
+// --- 6. Active Nav Link on Scroll ---
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    // Check if we have scrolled past the section top minus a third of its height
+    if (window.scrollY >= sectionTop - sectionHeight / 3) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((a) => {
+    a.classList.remove("active");
+    if (a.getAttribute("href").includes(current)) {
+      a.classList.add("active");
+    }
+  });
+});
+
+// --- 7. 3D Tilt Effect ---
+const tiltCards = document.querySelectorAll(".tilt-card");
+tiltCards.forEach(card => {
+  card.addEventListener("mousemove", e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Calculate rotation limits (adjust divisor for more/less tilt)
+    const rotateX = ((y - centerY) / centerY) * -10;
+    const rotateY = ((x - centerX) / centerX) * 10;
+    
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+  
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    card.style.transition = "transform 0.5s ease";
+  });
+  
+  card.addEventListener("mouseenter", () => {
+    card.style.transition = "none";
+  });
+});
+
+// --- 8. Magnetic Buttons ---
+const magneticBtns = document.querySelectorAll(".magnetic-btn");
+magneticBtns.forEach(btn => {
+  btn.addEventListener("mousemove", (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    // Subtly move the button towards the cursor
+    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+  });
+  
+  btn.addEventListener("mouseleave", () => {
+    btn.style.transform = `translate(0px, 0px)`;
+    btn.style.transition = "transform 0.3s ease";
+  });
+  
+  btn.addEventListener("mouseenter", () => {
+    btn.style.transition = "none";
+  });
+});

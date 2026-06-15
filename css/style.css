@@ -878,6 +878,66 @@ nav a.active {
   }
 }
 
+/* ================= CUSTOM CURSOR ================= */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--neon-primary);
+}
 
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--neon-secondary);
+}
 
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
 
+.cursor-outline.cursor-hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: rgba(249, 115, 22, 0.1);
+  border-color: var(--neon-primary);
+  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+/* ================= INTERACTIVE EFFECTS ================= */
+/* Scroll Reveal */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3D Tilt Card */
+.tilt-card {
+  transform-style: preserve-3d;
+  /* Transform handled by JS */
+}
+
+/* Magnetic Button */
+.magnetic-btn {
+  display: inline-block;
+  /* Transform handled by JS */
+}
+
+/* Hide custom cursor on small devices */
+@media(max-width: 768px) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
